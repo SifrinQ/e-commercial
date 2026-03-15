@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    /* border: 1px solid black; */
     border-radius: 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -69,4 +68,19 @@
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
+}
+
+@media (max-width: 650px) {
+  .navigation {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .btn {
+    margin-right: 0;
+    width: 100%;
+    max-width: 200px;
+    font-size: 15px;
+    padding: 1em;
+  }
 }

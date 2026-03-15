@@ -63,7 +63,7 @@ function App() {
       return <Contact />
     }
 
-    return <About />
+    return <About onTabChange={setCurrentTab}/>
   }
 
   return (
