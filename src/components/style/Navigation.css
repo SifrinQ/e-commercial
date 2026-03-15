@@ -2,12 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    position: relative;
+    padding: 10px 0;
+    width: min(1120px, 92%);
+    margin: 0 auto;
 }
 
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.cart-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+}
 .btn {
   opacity: 1;
   position: relative;
@@ -15,7 +26,6 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 1em 2.5em;
-  margin-right: 2.5em;
   display: inline-block;
   cursor: pointer;
   border-radius: 6em;
@@ -71,15 +81,15 @@
 }
 
 @media (max-width: 650px) {
-  .navigation {
+  .nav-buttons {
     flex-direction: row;
-    gap: 15px;
+    width: 100%;
+    margin-left: 0;
   }
 
   .btn {
-    margin-right: 0;
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
     font-size: 15px;
     padding: 1em;
   }
