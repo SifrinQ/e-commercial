@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import './style/App.css'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import Products from './Products'
+import About from './About'
+import Contact from './Contact'
 import item_placeholder from '../assets/item-placeholder.png'
 
 function App() {
+  const [currentTab, setCurrentTab] = useState('about')
   const products = [
     {
       id: 1,
@@ -49,11 +53,24 @@ function App() {
       image: item_placeholder
     }
   ]
+
+  const renderTab = () => {
+    if (currentTab === 'products') {
+      return <Products products={products} />
+    }
+
+    if (currentTab === 'contact') {
+      return <Contact />
+    }
+
+    return <About />
+  }
+
   return (
     <div className="wrapper">
       <Logo />
-      <Navigation />
-      <Products products={products} />
+      <Navigation onTabChange={setCurrentTab} />
+      {renderTab()}
     </div>
   )
 }
