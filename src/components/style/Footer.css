@@ -2,8 +2,8 @@
     background: #ffffff;
     border-top: 1px solid #e8e8e8;
     box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.03);
-    margin-top: auto; /* Pushes footer to bottom if container is flex */
     width: 100%;
+    margin-top: auto;
 }
 
 .footer-inner {
