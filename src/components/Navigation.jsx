@@ -1,16 +1,20 @@
 import './style/Navigation.css'
-import cartImg from '../assets/cart.png'
+import logo from '../assets/logo-placeholder.png'
 
 function Navigation({ onTabChange }) {
     return (
-        <div className="navigation"> 
-            <div className="nav-buttons">
-                <button className="btn" onClick={() => onTabChange('about')}>About US</button>
-                <button className="btn" onClick={() => onTabChange('products')}>Shop</button>
-                <button className="btn" onClick={() => onTabChange('contact')}>Contact</button>
+        <header className="navigation"> 
+            <div className="nav-inner">
+                <div className="nav-logo">
+                    <img src={logo} alt="Logo" />
+                </div>
+                <div className="nav-buttons">
+                    <button className="btn" onClick={() => onTabChange('about')}>About US</button>
+                    <button className="btn" onClick={() => onTabChange('products')}>Shop</button>
+                    <button className="btn" onClick={() => onTabChange('contact')}>Contact</button>
+                </div>
             </div>
-            {/* <img src={cartImg} className="cart-icon" alt="Cart" /> */}
-        </div>
+        </header>
   );
 }
 

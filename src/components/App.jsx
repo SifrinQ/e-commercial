@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './style/App.css'
-import Logo from './Logo'
 import Navigation from './Navigation'
 import Products from './Products'
 import About from './About'
@@ -68,7 +67,6 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Logo />
       <Navigation onTabChange={setCurrentTab} />
       {renderTab()}
     </div>
