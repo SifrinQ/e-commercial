@@ -1,8 +1,11 @@
 import logo from '../assets/logo-placeholder.png'
 import itemPlaceholder from '../assets/item-placeholder.png'
+import products from '../data/products'
 import './style/About.css'
 
-function About({ onTabChange}) {
+function About({ onTabChange }) {
+  const brandItems = ['WALMART', 'TARGET', 'AMAZON', 'COSTCO', 'BEST BUY', 'MACYS']
+
   return (
     <section className="aboutPage">
       <div className="aboutHero">
@@ -10,7 +13,7 @@ function About({ onTabChange}) {
           <p className="aboutEyebrow">About Us</p>
           <h1 className="aboutTitle">Providing exceptional goods for your everyday life</h1>
           <p>
-            We are dedicated to sourcing and delivering high-quality, durable 
+            We are dedicated to sourcing and delivering high-quality, durable
             products that bring real value and comfort to your home.
           </p>
           <a className="aboutCta" onClick={() => onTabChange('products')} href="#">Shop collection</a>
@@ -28,16 +31,19 @@ function About({ onTabChange}) {
       </div>
 
       <section className="trustedBlock" aria-label="Trusted by clients">
-        <p>Featured in top global retail networks</p>
-        <div className="trustedLogos">
-          <span>WALMART</span>
-          <span>TARGET</span>
-          <span>AMAZON</span>
-          <span>COSTCO</span>
-          <span>BEST BUY</span>
-          <span>MACYS</span>
+        <div className="carouselHeading">
+          <p>Featured in top global retail networks</p>
+        </div>
+
+        <div className="trustedViewport">
+          <div className="trustedTrack">
+            {[...brandItems, ...brandItems].map((brand, index) => (
+              <span key={`${brand}-${index}`}>{brand}</span>
+            ))}
+          </div>
         </div>
       </section>
+
 
       <section className="statsBlock">
         <div className="statsHeading">
@@ -66,6 +72,30 @@ function About({ onTabChange}) {
           </article>
         </div>
       </section>
+
+
+      <section className="productCarouselBlock" aria-label="Popular products carousel">
+        <div className="carouselHeading">
+          <p>Popular products</p>
+        </div>
+
+        <div className="productViewport">
+          <div className="productTrack">
+            {[...products, ...products].map((product, index) => (
+              <article key={`${product.id}-${index}`} className="miniProductCard">
+                <div className="miniProductImageWrap">
+                  <img src={product.image} alt={product.name} />
+                </div>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <strong>${product.price.toFixed(2)}</strong>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
     </section>
   )
 }
